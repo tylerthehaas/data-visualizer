@@ -2,7 +2,8 @@ module Main exposing (Model, Msg(..), init, main, update, view)
 
 import Browser exposing (Document)
 import Csv exposing (Csv, parse)
-import Html exposing (Html, code, textarea)
+import Html exposing (Html, h1, text, textarea)
+import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 
 
@@ -16,7 +17,7 @@ type alias Model =
 
 init : ( Model, Cmd Msg )
 init =
-    ( { data = parse "id,value\n1,one\n2,two\n" }, Cmd.none )
+    ( { data = parse "" }, Cmd.none )
 
 
 
@@ -40,7 +41,8 @@ update msg model =
 
 viewBody : Model -> List (Html Msg)
 viewBody model =
-    [ textarea [ onInput ChangeData ] []
+    [ h1 [] [ text "Data Visualizer" ]
+    , textarea [ onInput ChangeData, rows 25, cols 150 ] []
     ]
 
 
