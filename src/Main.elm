@@ -3,8 +3,8 @@ module Main exposing (Model, Msg(..), init, main, update, view)
 import Browser exposing (Document)
 import Csv exposing (Csv, parse)
 import Html exposing (Html, h1, text, textarea)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
+import Html.Attributes exposing (cols, rows)
+import Html.Events exposing (onInput)
 
 
 
